@@ -6,3 +6,4 @@ logutils==0.3.3
 psycopg2==2.6
 celery[redis]==3.1.17
 django-celery==3.1.16
+lc8_download==0.1.3
