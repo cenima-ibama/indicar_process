@@ -190,6 +190,7 @@ DJANGO_APPS = (
     # Admin panel and documentation:
     'django.contrib.admin',
     # 'django.contrib.admindocs',
+    'django.contrib.gis',
 )
 
 # Apps specific for this project go here.
@@ -241,9 +242,7 @@ WSGI_APPLICATION = '%s.wsgi.application' % SITE_NAME
 ########## END WSGI CONFIGURATION
 
 
-########## SOUTH CONFIGURATION
-# See: http://south.readthedocs.org/en/latest/installation.html#configuring-your-django-installation
+########## EXTRA_APPS
 INSTALLED_APPS += (
-    # Database migration helpers:
 )
 
