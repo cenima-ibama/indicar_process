@@ -5,12 +5,13 @@ from django.core.management.base import BaseCommand
 
 from imagery.models import Image
 
-from ...tasks import add_image
+from ...tasks import add_image, make_tms
 
 
 class Command(BaseCommand):
-    help = """Add RGB images to CatalogoLandsat and generate the TMS."""
+    help = """Generate the TMS and add RGB images to CatalogoLandsat."""
 
     def handle(self, *args, **options):
-        for image in Image.objects.filter(type='r6g5b4', date__gte=date.today()):
+        for image in Image.objects.filter(type='r6g5b4', creation_date__gte=date.today()):
+            make_tms(image)
             add_image(image)
