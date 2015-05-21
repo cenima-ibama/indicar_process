@@ -23,7 +23,7 @@ def add_image(image):
 def make_tms(image):
     """Generate the TMS of an Image."""
     if image.type == 'r6g5b4':
-        path = join('/mnt/csr/imagens/landsat8', image.file_path())
-        call(['/home/wille/scripts/scripts_for_gis/make_tms.sh', path])
+        path = join('/csr/imagens/landsat8', image.file_path())
+        call(['make_tms.sh', path])
     else:
         print('Image is not of r6g5b4 type.')
