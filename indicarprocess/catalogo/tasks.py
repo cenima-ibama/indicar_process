@@ -12,11 +12,8 @@ def add_image(image):
         path=join('/mnt/csr/imagens/landsat8', image.scene.name),
         shape=image.scene.geom,
         data=image.scene.date,
-        url_tms=join(
-            'http://10.1.25.66/imagens/tms/landsat',
-            image.scene.name,
-            '_r6g5b4_tms.xml'
-        )
+        url_tms=join('http://10.1.25.66/imagens/tms/landsat',
+            image.scene.name + '_r6g5b4_tms.xml')
     )
 
 
