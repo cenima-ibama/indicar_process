@@ -12,7 +12,7 @@ urlpatterns = patterns('',
 
     # Examples:
     # url(r'^$', 'indicarprocess.views.home', name='home'),
-    url(r'^', include('imagery.urls', namespace='sat')),
+    url(r'^', include('imagery.urls', namespace='imagery')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
