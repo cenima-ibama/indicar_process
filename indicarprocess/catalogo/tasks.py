@@ -6,7 +6,7 @@ from .models import CatalogoLandsat
 
 
 def add_image(image):
-    """Function to add a Image to CatalogoLandsat."""
+    """Function to add an Image to CatalogoLandsat."""
     if image.type == 'r6g5b4':
         if CatalogoLandsat.objects.filter(image=image.name).count() == 0:
             CatalogoLandsat.objects.create(
