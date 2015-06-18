@@ -14,7 +14,8 @@ def add_image(image):
         if CatalogoLandsat.objects.filter(image=image.name).count() == 0:
             CatalogoLandsat.objects.create(
                 image=image.name,
-                path=join('/mnt/csr/imagens/landsat8', image.scene.name),
+                path=join('/mnt/csr/imagens/landsat%s' % image.scene.sat[-1],
+                    image.scene.name),
                 shape=image.scene.geom,
                 data=image.scene.date,
                 url_tms=join('http://10.1.25.66/imagens/tms/landsat',
