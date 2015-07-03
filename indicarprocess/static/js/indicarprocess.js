@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 	$("#search").on("click", function(){
 
-		var url = "//" + window.location.host + "/search/?";
+		var url = "//" + window.location.host + "/?";
 
 		var scene = $("#scene").val();
 		var path = $("#path").val();
@@ -21,21 +21,21 @@ $(document).ready(function(){
 		var start = $("#startDate").val();
 		var end = $("#endDate").val();
 
-		if (scene && scene != "") 
+		if (scene && scene != "")
 			url = url + "name=" + scene + "&";
 		if (path && path != "")
 			url = url + "path=" + path + "&";
-		if (row && row != "") 
+		if (row && row != "")
 			url = url + "row=" + row + "&";
-		if (satellite && satellite != "") 
+		if (satellite && satellite != "")
 			url = url + "sat=" + satellite + "&";
-		if (status && status != "") 
+		if (status && status != "")
 			url = url + "status=" + status + "&";
-		if ( maxcloud && maxcloud != "") 
+		if ( maxcloud && maxcloud != "")
 			url = url + "max_cloud=" + maxcloud + "&";
-		if (start && start != "") 
+		if (start && start != "")
 			url = url + "start=" + start + "&";
-		if (end && end != "") 
+		if (end && end != "")
 			url = url + "end=" + end + "&";
 
 
