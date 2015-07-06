@@ -28,11 +28,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'indicarprocess',
-        'USER': 'caio',
-        'PASSWORD': 'caio',
+        'USER': 'wille',
+        'PASSWORD': 'wille',
         'HOST': '',
         'PORT': '',
-    }
+    },
 }
 ########## END DATABASE CONFIGURATION
 
@@ -62,3 +62,7 @@ DEBUG_TOOLBAR_PATCH_SETTINGS = False
 # http://django-debug-toolbar.readthedocs.org/en/latest/installation.html
 INTERNAL_IPS = ('127.0.0.1',)
 ########## END TOOLBAR CONFIGURATION
+
+# LOCAL SETTINGS
+LANGUAGE_CODE = 'pt-br'
+### END LOCAL SETTINGS

@@ -1,4 +1,6 @@
 ## -*- coding: utf-8 -*-
+from createhdr.createhdr import ReadTif
+
 from os.path import join
 from subprocess import call
 
@@ -40,3 +42,12 @@ def make_tms(image):
             print(('%s already has TMS' % image.name))
     else:
         print('Image is not a Landsat 8 of r6g5b4 type or a Landsat 5/7 of r5g4b3 type.')
+
+
+def create_hdr(image):
+
+    if (image.type == 'r6g5b4' and image.scene.sat == 'L8') or \
+        (image.type == 'r5g4b3' and image.scene.sat in ['L5', 'L7']):
+
+        tif = ReadTif(image.file_path())
+        tif.write_hdr()
