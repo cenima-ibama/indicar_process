@@ -28,8 +28,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'indicarprocess',
-        'USER': '',
-        'PASSWORD': '',
+        'USER': 'caio',
+        'PASSWORD': 'caio',
         'HOST': '',
         'PORT': '',
     }
