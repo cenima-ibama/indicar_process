@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+<h1>{% block page_title %}Recursos para uso no QGIS{% endblock page_title %}</h1>
+
+{% block content %}
+  <h3>Catálogos</h3>
+  <ul>
+    <li><a href="http://siscom.ibama.gov.br/geoserver/csr/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=csr:catalogo_landsat&outputFormat=SHAPE-ZIP">
+      Shape do Catálogo Landsat
+    </a></li>
+    <li><a href="http://siscom.ibama.gov.br/geoserver/csr/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=csr:catalogo_rapideye&outputFormat=SHAPE-ZIP">
+      Shape do Catálogo RapidEye
+    </a></li>
+  </ul>
+
+  <h3>Mapas</h3>
+  <ul>
+    <li><a href="/media/google_map.xml">Google Maps</a></li>
+    <li><a href="/media/google_satellite.xml">Google Maps Satellite</a></li>
+    <li><a href="/media/google_terrain.xml">Google Maps Terrain</a></li>
+    <li><a href="/media/nasa_dem.xml">Nasa DEM</a></li>
+    <li><a href="/media/nasa_modis.xml">Nasa MODIS</a></li>
+  </ul>
+{% endblock content %}
