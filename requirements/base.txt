@@ -9,3 +9,4 @@ django-celery==3.1.16
 lc8_download==0.1.5
 pyquery==1.2.9
 git+https://github.com/ibamacsr/indicar-tools/#egg=indicar-tools
+git+http://git.ibama.gov.br/csr/createhdr.git
