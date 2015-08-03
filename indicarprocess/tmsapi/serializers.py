@@ -7,10 +7,11 @@ from catalogo.models import CatalogoLandsat
 class LandsatSerializer(ModelSerializer):
     southwest = SerializerMethodField()
     northeast = SerializerMethodField()
+    name = SerializerMethodField()
 
     class Meta:
         model = CatalogoLandsat
-        fields = ['image', 'data', 'southwest', 'northeast']
+        fields = ['name', 'data', 'southwest', 'northeast']
 
     def get_bounds(self, obj):
         lats = []
@@ -28,3 +29,6 @@ class LandsatSerializer(ModelSerializer):
 
     def get_northeast(self, obj):
         return self.get_bounds(obj)[0]
+
+    def get_name(self, obj):
+        return obj.image.replace('.tif', '')
