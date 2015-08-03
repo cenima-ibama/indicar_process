@@ -171,6 +171,7 @@ MIDDLEWARE_CLASSES = (
     # Default Django middleware.
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -257,5 +258,11 @@ WSGI_APPLICATION = '%s.wsgi.application' % SITE_NAME
 
 ########## EXTRA_APPS
 INSTALLED_APPS += (
+    'django_python3_ldap',
+    'rest_framework',
+    'corsheaders',
 )
 
+### CORS HEADERS CONFIGURATION
+CORS_ORIGIN_ALLOW_ALL = True
+### END CORS HEADERS CONFIGURATION

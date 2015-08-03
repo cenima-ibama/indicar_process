@@ -9,5 +9,6 @@ django-celery==3.1.16
 lc8_download==0.1.6
 pyquery==1.2.9
 djangorestframework==3.1.3
+django-cors-headers==1.1.0
 git+https://github.com/ibamacsr/indicar-tools/#egg=indicar-tools
 git+http://git.ibama.gov.br/csr/createhdr.git
