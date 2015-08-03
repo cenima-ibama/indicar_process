@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'indicarprocess.views.home', name='home'),
     url(r'^', include('imagery.urls', namespace='imagery')),
     url(r'^catalogo/', include('catalogo.urls', namespace='catalogo')),
+    url(r'^api/', include('tmsapi.urls', namespace='tmsapi')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
