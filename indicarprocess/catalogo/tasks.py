@@ -16,7 +16,7 @@ def make_tms(image):
         (image.type == 'r5g4b3' and image.scene.sat in ['L5', 'L7']):
 
         if CatalogoLandsat.objects.filter(image=image.name).count() == 0:
-            call(['make_tms.sh', image.file_path()])
+            call(['/home/wille/script/scripts-for-gis/make_tms.sh', image.file_path()])
             CatalogoLandsat.objects.create(
                 image=image.name,
                 path=join('/mnt/csr/imagens/landsat%s' % image.scene.sat[-1],
