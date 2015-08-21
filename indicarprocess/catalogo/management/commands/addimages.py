@@ -1,18 +1,19 @@
 # -*- coding: utf-8 -*-
-from datetime import date
+from celery import group
 
 from django.core.management.base import BaseCommand
 
 from imagery.models import Image
 
-from ...tasks import add_image, make_tms, create_hdr
+from ...models import CatalogoLandsat
+from ...tasks import make_tms, create_hdr
 
 
 class Command(BaseCommand):
     help = """Generate the TMS and add RGB images to CatalogoLandsat."""
 
     def handle(self, *args, **options):
-        for image in Image.objects.filter(type='r6g5b4', creation_date__gte=date.today()):
-            make_tms(image)
-            add_image(image)
-            create_hdr(image)
+        images = Image.objects.filter(type__in=['r6g5b4', 'r5g4b3'])
+        images = [i for i in images if CatalogoLandsat.objects.filter(image=i.name).count() == 0]
+        group(make_tms.s(image) for image in images)().get()
+        group(create_hdr.s(image) for image in images)().get()
