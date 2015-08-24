@@ -3,6 +3,7 @@ from __future__ import absolute_import
 import os
 
 from celery import Celery
+from celery.schedules import crontab
 
 from django.conf import settings
 
@@ -18,7 +19,21 @@ app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 
 
 app.conf.update(
-    CELERY_TASK_RESULT_EXPIRES=3600,
+    CELERY_TASK_RESULT_EXPIRES=0,
+    CELERYBEAT_SCHEDULE={
+        'download': {
+            'task': 'imagery.tasks.download_all',
+            'schedule': crontab(minute=0, hour='4,12,19')
+        },
+        'process': {
+            'task': 'imagery.tasks.process_all',
+            'schedule': crontab(minute=30, hour='5,13,22')
+        },
+        'tms': {
+            'task': 'catalogo.tasks.make_tms_all',
+            'schedule': crontab(minute=0, hour='0,6,14')
+        },
+    },
 )
 
 if __name__ == '__main__':
