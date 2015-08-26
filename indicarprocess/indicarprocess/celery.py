@@ -8,7 +8,7 @@ from celery.schedules import crontab
 from django.conf import settings
 
 # set the default Django settings module for the 'celery' program.
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'indicarprocess.settings.production')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'indicarprocess.settings.local')
 
 app = Celery('indicarprocess', backend='rpc://', broker='amqp://guest:guest@localhost:5672//')
 
@@ -28,10 +28,6 @@ app.conf.update(
         'process': {
             'task': 'imagery.tasks.process_all',
             'schedule': crontab(minute=30, hour='5,13,22')
-        },
-        'tms': {
-            'task': 'catalogo.tasks.make_tms_all',
-            'schedule': crontab(minute=0, hour='0,6,14')
         },
     },
 )

@@ -1,6 +1,5 @@
 ## -*- coding: utf-8 -*-
 from createhdr.createhdr import ReadTif
-from celery import shared_task, group
 
 from os.path import join
 from subprocess import call
@@ -10,7 +9,6 @@ from imagery.models import Image
 from .models import CatalogoLandsat
 
 
-@shared_task
 def make_tms(image):
     """Generate the TMS of an Image."""
 
@@ -35,14 +33,13 @@ def make_tms(image):
         print('Image is not a Landsat 8 of r6g5b4 type or a Landsat 5/7 of r5g4b3 type.')
 
 
-@shared_task
 def make_tms_all():
     images = Image.objects.filter(type__in=['r6g5b4', 'r5g4b3'])
     images = [i for i in images if CatalogoLandsat.objects.filter(image=i.name).count() == 0]
-    group(make_tms.s(image) for image in images)()
+    for image in images:
+        make_tms(image)
 
 
-@shared_task
 def create_hdr(image):
 
     if (image.type == 'r6g5b4' and image.scene.sat == 'L8') or \
