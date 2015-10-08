@@ -8,7 +8,8 @@ class CatalogoLandsat(models.Model):
     path = models.CharField(max_length=500)
     url_tms = models.CharField(max_length=500)
     data = models.DateField()
-    nuvens = models.FloatField()
+    nuvens = models.FloatField(null=True)
+    quicklook = models.CharField(max_length=150, null=True)
     shape = models.PolygonField(srid=4674, null=True, blank=True)
 
     objects = models.GeoManager()

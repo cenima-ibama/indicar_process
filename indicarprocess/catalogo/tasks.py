@@ -19,10 +19,12 @@ def make_tms(image):
             call(['/home/wille/script/scripts-for-gis/make_tms.sh', image.file_path()])
             CatalogoLandsat.objects.create(
                 image=image.name,
-                path=join('/mnt/csr/imagens/landsat%s' % image.scene.sat[-1],
+                path=join('\\10.1.25.66\b52_imagens\landsat%s' % image.scene.sat[-1],
                     image.scene.name),
                 shape=image.scene.geom,
                 data=image.scene.date,
+                nuvens=image.scene.cloud_rate,
+                quicklook=image.scene.quicklook(),
                 url_tms=join('http://10.1.25.66/imagens/tms/landsat',
                     '%s_%s_tms.xml' % (image.scene.name, image.type)
                     )
