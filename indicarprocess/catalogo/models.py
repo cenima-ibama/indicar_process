@@ -10,6 +10,8 @@ class CatalogoLandsat(models.Model):
     data = models.DateField()
     nuvens = models.FloatField(null=True)
     quicklook = models.CharField(max_length=150, null=True)
+    orbita = models.CharField(max_length=3, null=True)
+    ponto = models.CharField(max_length=3, null=True)
     shape = models.PolygonField(srid=4674, null=True, blank=True)
 
     objects = models.GeoManager()

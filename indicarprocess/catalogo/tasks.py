@@ -25,6 +25,8 @@ def make_tms(image):
                 data=image.scene.date,
                 nuvens=image.scene.cloud_rate,
                 quicklook=image.scene.quicklook(),
+                orbita=image.scene.path,
+                ponto=image.scene.row,
                 url_tms=join('http://10.1.25.66/imagens/tms/landsat',
                     '%s_%s_tms.xml' % (image.scene.name, image.type)
                     )
