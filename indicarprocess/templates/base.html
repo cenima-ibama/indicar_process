@@ -39,6 +39,13 @@
 
     <div class="navbar navbar-inverse">
       <div class="container">
+        <ul class="nav navbar-nav navbar-right">
+          {% if request.user.is_authenticated %}
+            <li><a href="{% url 'imagery:logout' %}">Logout</a></li>
+          {% else %}
+            <li><a href="{% url 'imagery:login' %}">Login</a></li>
+          {% endif %}
+        </ul>
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
@@ -52,10 +59,17 @@
             <li class="active"><a href="{% url 'imagery:index' %}">Home</a></li>
             <li><a href="{% url 'imagery:cloud-rate' %}">{% trans 'Cloud Rate' %}</a></li>
             <li><a href="{% url 'catalogo:resources' %}">Recursos</a></li>
+            {% if request.user.is_authenticated %}
+              <li><a href="{% url 'imagery:scheduling' %}">{% trans 'Scheduling' %}</a></li>
+            {% endif %}
           </ul>
         </div><!--/.nav-collapse -->
+
       </div>
+
     </div>
+
+
 
     <div class="container">
 
