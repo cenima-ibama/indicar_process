@@ -5,7 +5,7 @@ django-model-utils==2.2
 logutils==0.3.3
 psycopg2==2.6.1
 celery==3.1.18
-lc8_download==0.1.6
+lc8_download==0.2.1
 pyquery==1.2.9
 djangorestframework==3.2.4
 django-cors-headers==1.1.0
