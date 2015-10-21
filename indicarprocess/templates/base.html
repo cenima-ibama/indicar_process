@@ -63,7 +63,7 @@
             <li><a href="{% url 'imagery:cloud-rate' %}">{% trans 'Cloud Rate' %}</a></li>
             <li><a href="{% url 'catalogo:resources' %}">Recursos</a></li>
             {% if request.user.is_authenticated %}
-              <li><a href="{% url 'imagery:scheduling' %}">{% trans 'Scheduling' %}</a></li>
+              <li><a href="{% url 'imagery:scene-request' %}">{% trans 'Scene Request' %}</a></li>
             {% endif %}
           </ul>
         </div><!--/.nav-collapse -->
