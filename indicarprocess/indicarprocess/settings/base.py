@@ -258,7 +258,6 @@ WSGI_APPLICATION = '%s.wsgi.application' % SITE_NAME
 
 ########## EXTRA_APPS
 INSTALLED_APPS += (
-    'django_python3_ldap',
     'rest_framework',
     'corsheaders',
 )
