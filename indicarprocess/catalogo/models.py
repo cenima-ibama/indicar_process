@@ -24,7 +24,7 @@ class CatalogoLandsat(models.Model):
         return self.image
 
     class Meta:
-        db_table = 'catalogo_landsat'
+        db_table = 'img_catalogo_landsat_a'
 
 
 class CatalogoRapidEye(models.Model):
@@ -48,4 +48,4 @@ class CatalogoRapidEye(models.Model):
         return self.image
 
     class Meta:
-        db_table = 'catalogo_rapideye'
+        db_table = 'img_catalogo_rapideye_a'
