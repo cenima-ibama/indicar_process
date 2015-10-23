@@ -23,7 +23,11 @@ app.conf.update(
     CELERYBEAT_SCHEDULE={
         'download': {
             'task': 'imagery.tasks.download_all',
-            'schedule': crontab(minute=0, hour='4,12,19')
+            'schedule': crontab(minute=0, hour='2')
+        },
+        'download_requests': {
+            'task': 'imagery.tasks.download_all_scene_request',
+            'schedule': crontab(minute=0, hour='21,12')
         },
         'process': {
             'task': 'imagery.tasks.process_all',
