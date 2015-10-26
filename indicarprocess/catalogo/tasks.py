@@ -30,6 +30,14 @@ def make_tms(image):
                     '%s_%s_tms.xml' % (image.scene.name, image.type)
                     )
             )
+            # create HDR file for the RGB image
+            tif = ReadTif(image.file_path())
+            hdr_name = tif.write_hdr()
+            Image.objects.get_or_create(
+                name=hdr_name.split('/')[-1],
+                type='hdr',
+                scene=image.scene
+            )
         else:
             print(('%s already has TMS' % image.name))
     else:
