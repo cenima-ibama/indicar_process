@@ -56,8 +56,8 @@
             <li><a href="{% url 'imagery:cloud-rate' %}">{% trans 'Cloud Rate' %}</a></li>
             <li><a href="{% url 'catalogo:resources' %}">Recursos</a></li>
             {% if request.user.is_authenticated %}
-              <li><a href="{% url 'imagery:scene-request' %}"><span class="glyphicon glyphicon-circle-arrow-down"></span> {% trans 'Request Scene' %}</a></li>
-              <li><a href="{% url 'imagery:scene-request-list' %}"><span class="glyphicon glyphicon-list"></span> {% trans 'My Requests' %}</a></li>
+              <li><a href="{% url 'imagery:request-scene' %}"><span class="glyphicon glyphicon-circle-arrow-down"></span> {% trans 'Request Scene' %}</a></li>
+              <li><a href="{% url 'imagery:user-scene-request' %}"><span class="glyphicon glyphicon-list"></span> {% trans 'My Requests' %}</a></li>
             {% endif %}
           </ul>
           {% include 'imagery/login_menu.html' %}
