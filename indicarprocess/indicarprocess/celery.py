@@ -26,7 +26,7 @@ app.conf.update(
             'schedule': crontab(minute=0, hour='2')
         },
         'download_requests': {
-            'task': 'imagery.tasks.download_all_scene_request',
+            'task': 'imagery.tasks.download_all_scene_requests',
             'schedule': crontab(minute=0, hour='21,12')
         },
         'process': {
