@@ -12,6 +12,7 @@
             <th>{% trans 'Scene' %}</th>
             <th>{% trans 'Creation Date' %}</th>
             <th>{% trans 'Status' %}</th>
+            <th><!-- remove column --></th>
           </tr>
         </thead>
         <tbody>
@@ -24,6 +25,9 @@
               {% endif %}
               <td>{{ scene.creation_date|date:"SHORT_DATE_FORMAT" }}</td>
               <td>{{ scene.get_status_display }}</td>
+              <td><a href="{% url 'imagery:delete-scene-request' scene.pk %}">
+                <span class="text-danger glyphicon glyphicon-remove-circle"></span>
+              </a></td>
             </tr>
           {% endfor %}
         </tbody>
