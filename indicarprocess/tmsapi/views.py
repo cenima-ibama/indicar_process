@@ -1,4 +1,4 @@
-from rest_framework.generics import ListAPIView, DetailAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 
 from catalogo.models import CatalogoLandsat, CatalogoRapidEye
 from .serializers import LandsatSerializer, RapidEyeSerializer
@@ -26,12 +26,14 @@ class RapidEyeListAPI(ListAPIView):
             return []
 
 
-class LandsatDetailView(DetailAPIView):
+class LandsatDetailView(RetrieveAPIView):
+    queryset = CatalogoLandsat.objects.all()
     serializer_class = LandsatSerializer
     lookup_field = 'image'
 
 
-class RapidEyeDetailView(DetailAPIView):
+class RapidEyeDetailView(RetrieveAPIView):
+    queryset = CatalogoRapidEye.objects.all()
     serializer_class = RapidEyeSerializer
     lookup_field = 'image'
 
