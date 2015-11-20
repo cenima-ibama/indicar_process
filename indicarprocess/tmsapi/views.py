@@ -1,4 +1,4 @@
-from rest_framework.generics import ListAPIView
+from rest_framework.generics import ListAPIView, DetailAPIView
 
 from catalogo.models import CatalogoLandsat, CatalogoRapidEye
 from .serializers import LandsatSerializer, RapidEyeSerializer
@@ -24,3 +24,14 @@ class RapidEyeListAPI(ListAPIView):
             return CatalogoRapidEye.objects.filter(geom__intersects=bbox).order_by('data')
         else:
             return []
+
+
+class LandsatDetailView(DetailAPIView):
+    serializer_class = LandsatSerializer
+    lookup_field = 'image'
+
+
+class RapidEyeDetailView(DetailAPIView):
+    serializer_class = RapidEyeSerializer
+    lookup_field = 'image'
+
