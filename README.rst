@@ -22,3 +22,13 @@ You can remove catalogo and tmsapi folders. It is just a workaround to solve IBA
 * Create a database, configure it in settings/local.py
 * Install requirements
 * Run migrations
+
+
+Configuration
+==============
+
+To use the not_found_scenes_alert task function configure the following variables in your settings:
+
+    SERVER_EMAIL = 'sender@yourserver.com'
+    NOT_FOUND_SCENES_ADMIN_EMAILS = ['destination@server.com']
+    

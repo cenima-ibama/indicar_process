@@ -27,11 +27,15 @@ app.conf.update(
         },
         'download_requests': {
             'task': 'imagery.tasks.download_all_scene_requests',
-            'schedule': crontab(minute=0, hour='21,12')
+            'schedule': crontab(minute=0, hour='21')
         },
         'process': {
             'task': 'imagery.tasks.process_all',
             'schedule': crontab(minute=30, hour='5,13,22')
+        },
+        'not_found_scenes_alert': {
+            'task': 'imagery.tasks.not_found_scenes_alert',
+            'schedule': crontab(minute=59, hour='23')
         },
     },
 )
