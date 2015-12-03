@@ -26,7 +26,7 @@ def make_tms(image):
                 quicklook=image.scene.quicklook(),
                 orbita=image.scene.path,
                 ponto=image.scene.row,
-                url_tms=join('http://10.1.25.66/imagens/tms/landsat',
+                url_tms=join('http://siscom.ibama.gov.br/tms/landsat',
                     '%s_%s_tms.xml' % (image.scene.name, image.type)
                     )
             )

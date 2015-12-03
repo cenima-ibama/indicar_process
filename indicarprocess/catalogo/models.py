@@ -14,8 +14,6 @@ class CatalogoLandsat(models.Model):
     ponto = models.CharField(max_length=3, null=True)
     shape = models.PolygonField(srid=4674, null=True, blank=True)
 
-    objects = models.GeoManager()
-
     def save(self, *args, **kwargs):
         self.full_clean()
         super(CatalogoLandsat, self).save(*args, **kwargs)
@@ -24,7 +22,7 @@ class CatalogoLandsat(models.Model):
         return self.image
 
     class Meta:
-        db_table = 'img_catalogo_landsat_a'
+        db_table = 'ibama\".\"img_catalogo_landsat_a'
 
 
 class CatalogoRapidEye(models.Model):
@@ -38,8 +36,6 @@ class CatalogoRapidEye(models.Model):
     geom = models.MultiPolygonField(srid=4674, null=True, blank=True)
     nuvens = models.FloatField()
 
-    objects = models.GeoManager()
-
     def save(self, *args, **kwargs):
         self.full_clean()
         super(CatalogoRapidEye, self).save(*args, **kwargs)
@@ -48,4 +44,4 @@ class CatalogoRapidEye(models.Model):
         return self.image
 
     class Meta:
-        db_table = 'img_catalogo_rapideye_a'
+        db_table = 'ibama\".\"img_catalogo_rapideye_a'
