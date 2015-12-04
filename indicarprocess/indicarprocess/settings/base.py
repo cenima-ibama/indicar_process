@@ -254,6 +254,7 @@ WSGI_APPLICATION = '%s.wsgi.application' % SITE_NAME
 INSTALLED_APPS += (
     'rest_framework',
     'corsheaders',
+    'sentinel_catalog'
 )
 
 ### REST FRAMEWORK CONFIGS
