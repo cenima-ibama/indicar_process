@@ -7,7 +7,7 @@ $(document).ready(function(){
   $("#cloudRange").slider();
 
   $("#search").on("click", function(){
-    var url = "//" + window.location.host + "/?";
+    var url = "//" + window.location.host + window.location.pathname + "?";
 
     var scene = $("#scene").val();
     var path = $("#path").val();
@@ -37,6 +37,5 @@ $(document).ready(function(){
 
     url = url.substring(0,url.length - 1);
     this.href = url;
-    $(this).click();
   });
 });
