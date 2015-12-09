@@ -12,6 +12,7 @@ urlpatterns = [
     # url(r'^$', 'indicarprocess.views.home', name='home'),
     url(r'^', include('imagery.urls')),
     url(r'^catalogo/', include('catalogo.urls')),
+    url(r'^sentinel/', include('sentinel_catalog.urls')),
     url(r'^api/', include('tmsapi.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
