@@ -8,7 +8,7 @@ from celery.schedules import crontab
 from django.conf import settings
 
 # set the default Django settings module for the 'celery' program.
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'indicarprocess.settings.local')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'indicarprocess.settings.production')
 
 app = Celery('indicarprocess', backend='rpc://', broker='amqp://guest:guest@localhost:5672//')
 
