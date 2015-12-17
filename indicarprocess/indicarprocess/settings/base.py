@@ -253,6 +253,8 @@ WSGI_APPLICATION = '%s.wsgi.application' % SITE_NAME
 ########## EXTRA_APPS
 INSTALLED_APPS += (
     'rest_framework',
+    'rest_framework_gis',
+    'leaflet',
     'corsheaders',
     'sentinel_catalog'
 )
