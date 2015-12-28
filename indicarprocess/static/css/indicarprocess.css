@@ -1,4 +1,23 @@
 /*! project specific CSS goes here. */
+
+#search {
+  margin-top:1.6em;
+}
+
+#barra-brasil .brasil-flag {
+  height: 29px !important;
+}
+
+#formBounds{
+  display: none;
+}
+
+#areaSelected{
+  margin: 0.6em;
+  font-style: italic;
+  font-size: 12px;
+}
+
 .formtype {
   padding: 1.75em 0em;
 }
@@ -23,15 +42,6 @@
 .slider-horizontal {
   margin: 0em 0.5em 0em;
 }
-
-#search {
-  margin-top:1.6em;
-}
-
-#barra-brasil .brasil-flag {
-  height: 29px !important;
-}
-
 .navbar{
   border-radius: 0px;
 }
@@ -39,4 +49,22 @@
 .navbar-brand-img{
   margin-top: -0.3em;
   margin-right: -0.6em;
+}
+
+.modal {
+  visibility: hidden;
+  display: block;
+}
+
+.modal[aria-hidden='false'] {
+  visibility: visible;
+  display: block;
+}
+
+.inline-data{
+  display: table;
+}
+
+.flex{
+  display: flex;
 }
