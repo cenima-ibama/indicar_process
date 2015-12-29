@@ -28,8 +28,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'sentinel',
-        'USER': 'naldo',
-        'PASSWORD': 'naldo',
+        'USER': 'postgres',
+        'PASSWORD': '',
         'HOST': '',
         'PORT': '',
     },
