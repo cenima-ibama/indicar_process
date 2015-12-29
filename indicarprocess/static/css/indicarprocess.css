@@ -8,16 +8,6 @@
   height: 29px !important;
 }
 
-#formBounds{
-  display: none;
-}
-
-#areaSelected{
-  margin: 0.6em;
-  font-style: italic;
-  font-size: 12px;
-}
-
 .formtype {
   padding: 1.75em 0em;
 }
@@ -50,22 +40,4 @@
 .navbar-brand-img{
   margin-top: -0.3em;
   margin-right: -0.6em;
-}
-
-.modal {
-  visibility: hidden;
-  display: block;
-}
-
-.modal[aria-hidden='false'] {
-  visibility: visible;
-  display: block;
-}
-
-.inline-data{
-  display: table;
-}
-
-.flex{
-  display: flex;
 }
