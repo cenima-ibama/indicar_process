@@ -1,9 +1,5 @@
 /*! project specific CSS goes here. */
 
-#search {
-  margin-top:1.6em;
-}
-
 #barra-brasil .brasil-flag {
   height: 29px !important;
 }
@@ -40,4 +36,12 @@
 .navbar-brand-img{
   margin-top: -0.3em;
   margin-right: -0.6em;
+}
+
+.page-header {
+  margin: 0.2em 0 !important;
+}
+
+.margin{
+  margin: 1em 0 1em 0;
 }
