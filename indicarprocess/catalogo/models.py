@@ -22,7 +22,7 @@ class CatalogoLandsat(models.Model):
         return self.image
 
     class Meta:
-        db_table = 'ibama\".\"img_catalogo_landsat_a'
+        db_table = 'img_catalogo_landsat_a'
 
 
 class CatalogoRapidEye(models.Model):
@@ -44,4 +44,4 @@ class CatalogoRapidEye(models.Model):
         return self.image
 
     class Meta:
-        db_table = 'ibama\".\"img_catalogo_rapideye_a'
+        db_table = 'img_catalogo_rapideye_a'
