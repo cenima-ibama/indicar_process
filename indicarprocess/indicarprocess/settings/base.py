@@ -202,7 +202,6 @@ DJANGO_APPS = (
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
-    'imagery',
     'catalogo',
 )
 
@@ -255,7 +254,9 @@ INSTALLED_APPS += (
     'rest_framework',
     'rest_framework_gis',
     'corsheaders',
-    'sentinel_catalog'
+    'sentinel_catalog',
+    'imagery',
+    'loginlogout',
 )
 
 ### REST FRAMEWORK CONFIGS
@@ -289,3 +290,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 ### END PASSWORD VALIDATION
+
+# Needed by loginlogout package
+URL_AFTER_LOGIN = 'imagery:index'

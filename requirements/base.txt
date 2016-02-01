@@ -5,10 +5,6 @@ django-model-utils==2.2
 logutils==0.3.3
 psycopg2==2.6.1
 celery==3.1.19
-lc8_download==0.2.1
-pyquery==1.2.9
-djangorestframework==3.3.2
-djangorestframework-gis==0.10
-django-cors-headers==1.1.0
-git+https://github.com/ibamacsr/indicar-tools/#egg=indicar-tools
-git+http://git.ibama.gov.br/csr/sentinel_catalog.git
+git+https://github.com/ibamacsr/imagery.git
+git+https://github.com/ibamacsr/loginlogout.git
+#git+http://git.ibama.gov.br/csr/sentinel_catalog.git

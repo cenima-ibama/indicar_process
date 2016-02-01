@@ -6,11 +6,12 @@ admin.autodiscover()
 
 
 urlpatterns = [
-    #url(r'^$', TemplateView.as_view(template_name='base.html')),
+    # url(r'^$', TemplateView.as_view(template_name='base.html')),
 
     # Examples:
     # url(r'^$', 'indicarprocess.views.home', name='home'),
     url(r'^', include('imagery.urls')),
+    url(r'^', include('loginlogout.urls')),
     url(r'^catalogo/', include('catalogo.urls')),
     url(r'^sentinel/', include('sentinel_catalog.urls')),
     url(r'^api/', include('tmsapi.urls')),
