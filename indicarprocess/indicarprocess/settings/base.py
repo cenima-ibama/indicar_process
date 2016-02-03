@@ -293,3 +293,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Needed by loginlogout package
 URL_AFTER_LOGIN = 'imagery:index'
+
+########## SRID CONFIGURATION
+SRID = 4674
+########## END SRID CONFIGURATION
+
