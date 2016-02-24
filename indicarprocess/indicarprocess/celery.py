@@ -39,7 +39,7 @@ app.conf.update(
         },
         'sentinel_query_and_download': {
             'task': 'sentinel_catalog.tasks.query_and_download_all',
-            'schedule': crontab(minute=0, hour='19, 6')
+            'schedule': crontab(minute=0, hour='20, 4')
         },
         'sentinel_extract_all': {
             'task': 'sentinel_catalog.tasks.extract_all',
