@@ -49,6 +49,10 @@ app.conf.update(
             'task': 'sentinel_catalog.tasks.process_all',
             'schedule': timedelta(hours=3)
         },
+        'sentinel_remove_expired_scenes' {
+            'task':'sentinel_catalog.tasks.remove_expired_scenes',
+            'schedule': crontab(hour='1')
+        }
     },
 )
 
