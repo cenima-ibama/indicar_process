@@ -8,7 +8,7 @@ from celery.schedules import crontab, timedelta
 from django.conf import settings
 
 # set the default Django settings module for the 'celery' program.
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'indicarprocess.settings.production')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'indicarprocess.settings.local')
 
 app = Celery('indicarprocess', backend='rpc://', broker='amqp://guest:guest@localhost:5672//')
 
@@ -49,7 +49,7 @@ app.conf.update(
             'task': 'sentinel_catalog.tasks.process_all',
             'schedule': timedelta(hours=3)
         },
-        'sentinel_remove_expired_scenes' {
+        'sentinel_remove_expired_scenes': {
             'task':'sentinel_catalog.tasks.remove_expired_scenes',
             'schedule': crontab(hour='1')
         }
