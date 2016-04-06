@@ -7,6 +7,7 @@ from subprocess import call
 from imagery.models import Image
 
 from .models import CatalogoLandsat
+from django.contrib.gis.geos import MultiPolygon
 
 
 def make_tms(image):
@@ -20,7 +21,7 @@ def make_tms(image):
             CatalogoLandsat.objects.create(
                 image=image.name,
                 path='\\\\10.1.25.66\\b52_imagens\\landsat%s\\%s' % (image.scene.sat[-1], image.scene.name),
-                shape=image.scene.geom,
+                shape=MultiPolygon(image.scene.geom),
                 data=image.scene.date,
                 nuvens=image.scene.cloud_rate,
                 quicklook=image.scene.quicklook(),
