@@ -1,0 +1,6 @@
+[submodule "indicarprocess/catalogo/bin/tilers-tools.v32"]
+	path = indicarprocess/catalogo/bin/tilers-tools.v32
+	url = https://github.com/nakijun/tilers-tools.v32.git
+[submodule "indicarprocess/catalogo/bin/scripts-for-gis"]
+	path = indicarprocess/catalogo/bin/scripts-for-gis
+	url = https://github.com/lmotta/scripts-for-gis.git
