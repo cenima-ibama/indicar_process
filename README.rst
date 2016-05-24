@@ -19,9 +19,25 @@ Instructions
 
 You can remove catalogo and tmsapi folders. It is just a workaround to solve IBAMA issues.
 
-* Create a database, configure it in settings/local.py
-* Install requirements
-* Run migrations
+System dependencies
+-------------
+
+Before start install, verify if all system dependencies are supplied, see below:
+
+- libgdal-dev 1.10
+- dans-gdal-script 0.23-2
+- postgis 2.1.4
+
+***UBUNTU***
+
+- python-numpy 1.8.2
+
+
+- Create a database, configure it in settings/local.py
+- Install requirements
+- Run migrations
+
+You can too remove urls about sentinel_catalog app, because that's a specific solution to CSR/IBAMA requests
 
 
 Configuration
@@ -31,4 +47,23 @@ To use the not_found_scenes_alert task function configure the following variable
 
     SERVER_EMAIL = 'sender@yourserver.com'
     NOT_FOUND_SCENES_ADMIN_EMAILS = ['destination@server.com']
+
+Imagery
+-------------
+The bands to download of landsat satellite might be listed in DOWNLOAD_BANDS variable in settings file.
+E.g.
+DOWNLOAD_BANDS = [4, 5, 6, 'QBA']
+
+Catalogo
+-------------
+
+To use the task to process TMS. you need to define the below settings:
+
+LANDSAT_PATH_FORMAT = Format of path to TMS images
+URL_TMS_BASE = URL to available TMS scene
+PNG_IMAGES_PATH = Path to place PNG image files
+TMS_IMAGES_PATH = Path to place TMS image files
+
+
+
     
