@@ -10,6 +10,15 @@ from .base import *
 # into your settings, but ImproperlyConfigured is an exception.
 from django.core.exceptions import ImproperlyConfigured
 
+########## IMAGERY SETTINGS
+DOWNLOAD_BANDS = [4, 5, 6, 'QBA']
+
+########## CATALOGO SETTINGS
+LANDSAT_PATH_FORMAT = ''
+URL_TMS_BASE = ''
+PNG_IMAGES_PATH = ''
+TMS_IMAGES_PATH = ''
+
 
 def get_env_setting(setting):
     """ Get the environment setting or return exception """
