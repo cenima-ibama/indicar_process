@@ -25,7 +25,7 @@ System dependencies
 Before start install, verify if all system dependencies are supplied, see below:
 
 - libgdal-dev 1.10
-- dans-gdal-script 0.23-2
+- dans-gdal-scripts 0.23-2
 - postgis 2.1.4
 
 ***UBUNTU***
