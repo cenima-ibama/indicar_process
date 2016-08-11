@@ -40,7 +40,7 @@ def make_tms(image):
             CatalogoLandsat.objects.create(
                 image=image.name,
                 path=settings.LANDSAT_PATH_FORMAT % (image.scene.sat[-1], image.scene.name),
-                shape=MultiPolygon(image.scene.geom),
+                geom=MultiPolygon(image.scene.geom),
                 data=image.scene.date,
                 nuvens=image.scene.cloud_rate,
                 quicklook=image.scene.quicklook(),

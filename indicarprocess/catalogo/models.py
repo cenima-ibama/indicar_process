@@ -12,7 +12,7 @@ class CatalogoLandsat(models.Model):
     quicklook = models.CharField(max_length=150, null=True)
     orbita = models.CharField(max_length=3, null=True)
     ponto = models.CharField(max_length=3, null=True)
-    shape = models.MultiPolygonField(srid=4674, null=True, blank=True)
+    geom = models.MultiPolygonField(srid=4674, null=True, blank=True)
 
     def save(self, *args, **kwargs):
         self.full_clean()
