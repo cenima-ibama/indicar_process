@@ -10,7 +10,7 @@ class LandsatListAPI(ListAPIView):
     def get_queryset(self):
         bbox = self.request.query_params.get('extent', None)
         if bbox:
-            return CatalogoLandsat.objects.filter(shape__intersects=bbox).order_by('data')
+            return CatalogoLandsat.objects.filter(geom__intersects=bbox).order_by('data')
         else:
             return []
 
