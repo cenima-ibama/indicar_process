@@ -16,7 +16,7 @@ class LandsatSerializer(ModelSerializer):
     def get_bounds(self, obj):
         lats = []
         lons = []
-        for lat, lon in obj.shape.coords[0][0]:
+        for lat, lon in obj.geom.coords[0][0]:
             lats.append(lat)
             lons.append(lon)
 
